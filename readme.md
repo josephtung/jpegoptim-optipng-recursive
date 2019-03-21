@@ -10,7 +10,7 @@ Run by typing ./optimize.sh
 ## Requirements
 
 * Linux based system
-* jpegoptim installed. 
+* jpegoptim & optipng installed
 * Set execution permission to optimize.sh e.g. chmod +x optimize.sh
 
 Originally forked from StephenPunwasi/jpegoptim-recursive
