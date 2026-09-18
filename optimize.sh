@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Recursively resize images to a maximum width of 3000 px (keeping aspect ratio)
+# Recursively resize images to a maximum width *or* height of 3000 px (keeping aspect ratio)
 # then optimize JPEGs with jpegoptim and PNGs with optipng.
 # Requires: ImageMagick (convert/mogrify), jpegoptim, optipng
 
@@ -10,7 +10,7 @@ optimize() {
   # --- JPEGs ---
   for f in *.jpg *.jpeg *.JPG *.JPEG; do
     # Resize only if wider than 3000 px; height scales proportionally
-    mogrify -resize '3000x>' "$f"
+    mogrify -resize '3000x3000>' "$f"
     jpegoptim --strip-all --all-progressive --max=90 "$f"
   done
 
